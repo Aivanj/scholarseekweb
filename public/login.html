@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarSeek – Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-left">
+            <div class="auth-brand">
+                <div class="brand-icon">🎓</div>
+                <h1 class="brand-name">ScholarSeek</h1>
+                <p class="brand-tagline">Empowering Students for a Brighter Future</p>
+            </div>
+            <div class="auth-features">
+                <div class="feature-item"><span class="feature-icon">🎯</span><span>Smart rule-based scholarship
+                        matching</span></div>
+                <div class="feature-item"><span class="feature-icon">📋</span><span>Track your applications in one
+                        place</span></div>
+                <div class="feature-item"><span class="feature-icon">🔔</span><span>Never miss a deadline again</span>
+                </div>
+                <div class="feature-item"><span class="feature-icon">❤️</span><span>Save and compare scholarships</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="auth-right">
+            <div class="auth-card">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="loginTab" onclick="switchTab('login')">Log In</button>
+                    <button class="auth-tab" id="signupTab" onclick="switchTab('signup')">Sign Up</button>
+                </div>
+
+                <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
+                    <h2 class="form-title">Welcome Back!</h2>
+                    <p class="form-subtitle">Log in to continue your scholarship journey</p>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="loginEmail" placeholder="Enter Email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password"
+                                onclick="togglePassword('loginPassword')">👁</button>
+                        </div>
+                    </div>
+
+                    <div id="loginError" class="error-msg" style="display:none;"></div>
+
+                    <button type="submit" class="btn-auth" id="loginBtn">
+                        <span class="btn-text">Log In</span>
+                        <span class="btn-loader" style="display:none;">⏳</span>
+                    </button>
+
+                    <p class="switch-text">Don't have an account? <a onclick="switchTab('signup')">Sign up here</a></p>
+                </form>
+
+                <form id="signupForm" class="auth-form" style="display:none;" onsubmit="handleSignup(event)">
+                    <h2 class="form-title">Create Account</h2>
+                    <p class="form-subtitle">Join thousands of students finding scholarships</p>
+
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="signupName" placeholder="Enter Full Name" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="signupEmail" placeholder="Enter Email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password <span class="hint">(minimum of 6 characters)</span></label>
+                        <div class="input-wrap">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="signupPassword" placeholder="Create a password" required>
+                            <button type="button" class="toggle-password"
+                                onclick="togglePassword('signupPassword')">👁</button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Confirm Password</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="signupConfirm" placeholder="Confirm password" required>
+                        </div>
+                    </div>
+
+                    <div id="signupError" class="error-msg" style="display:none;"></div>
+                    <div id="signupSuccess" class="success-msg" style="display:none;"></div>
+
+                    <button type="submit" class="btn-auth" id="signupBtn">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-loader" style="display:none;">⏳</span>
+                    </button>
+
+                    <p class="switch-text">Already have an account? <a onclick="switchTab('login')">Log in here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>
