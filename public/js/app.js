@@ -316,6 +316,12 @@ function updateProfilePageUI() {
 }
 
 // ─── Nav helpers ──────────────────────────────────────────
+function goToProfileAndScroll() {
+    showPage('profile');
+    setTimeout(() => {
+        document.getElementById('profileForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+}
 function goToHome() { showPage('dashboard', false); window.scrollTo({ top: 0, behavior: 'smooth' }); }
 function showAboutModal() { document.getElementById('aboutModal').classList.add('active'); }
 function closeAboutModal() { document.getElementById('aboutModal').classList.remove('active'); }
