@@ -1,5 +1,5 @@
 // ─── Config ───────────────────────────────────────────────
-const API = 'http://localhost:3000/api';
+const API = window.location.origin + '/api';
 
 // ─── Auth Guard: redirect to login if no token ────────────
 const token = localStorage.getItem('ss_token');
